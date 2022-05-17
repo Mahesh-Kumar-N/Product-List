@@ -1,0 +1,119 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d6d6d6;
+    padding: 5px;
+    width: 250px;
+    height: 350px;
+    background: #fff;
+
+    .product-title {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product-price {
+        color: rgb(238, 117, 11);
+        padding: 5px 0px;
+    }
+
+    .strike-through-price {
+        text-decoration: line-through;
+    }
+
+    .discount {
+        border: 1px solid #d6d6d6;
+        border-radius: 50%;
+        padding: 5px 0px;
+        width: 20px;
+        min-width: 20px;
+        color: #a40000;
+        align-items: center;
+        font-size: 10px;
+        display: inline-block;
+        background: #f4c9c9;
+        margin-left: 5px;
+    }
+
+    .merchant-name {
+        padding: 5px 0px;
+    }
+
+    .rating-container {
+        display: flex;
+
+        .rating-icon {
+            color: #ff9000;
+            font-size: 18px;
+        }
+
+        .rating {
+            font-weight: 600;
+            padding-right: 5px;
+        }
+
+        .count {
+            opacity: 0.5;
+        }
+    }
+}
+
+.product-card-image-container {
+    min-width: 250px;
+    max-height: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 0 !important;
+    overflow: hidden;
+
+    img {
+        height: 90%;
+        width: 100%;
+    }
+
+    .nav-arrow {
+        position: absolute;
+        top: 45%;
+        width: 40px;
+        height: 40px;
+        opacity: .4;
+        z-index: 2;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .nav-arrow.previous {
+        left: 0;
+    }
+
+    .nav-arrow.next {
+        right: 0;
+    }
+
+    .paginator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .page-circle {
+        border-radius: 50%;
+        border: 1px solid #000;
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .page-circle:last-child {
+        margin-right: 0;
+    }
+
+    .page-circle.current {
+        background: #66abf0;
+    }
+}

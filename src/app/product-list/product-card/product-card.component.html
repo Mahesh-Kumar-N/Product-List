@@ -1,0 +1,36 @@
+<div class="product-card">
+    <!-- Product Image Container -->
+    <div class="product-card-image-container" (mouseover)="isHovered = true" (mouseleave)="isHovered = false">
+        <img id="product-image" [src]="getCurrentMedia()" [ngStyle]="{'object-fit': 'fill'}">
+        <!-- Previous Icon -->
+        <img *ngIf="isHovered" id="previous-icon-image" class="nav-arrow previous" (click)="previous()"
+            [hidden]="!showNavigation()" src="assets/images/icon-arrow-left.svg" alt="PREVIOUS" />
+        <!-- Next Icon -->
+        <img *ngIf="isHovered" id="next-icon-image" class="nav-arrow next" (click)="next()" [hidden]="!showNavigation()"
+            src="assets/images/icon-arrow-right.svg" alt="NEXT">
+        <!-- Image paginator -->
+        <div class="paginator" [hidden]="!showNavigation()">
+            <span class="page-circle" *ngFor="let image of images, let i = index"
+                [ngClass]="{'current' : currentIndex === i}"></span>
+        </div>
+    </div>
+    <!-- Product Title -->
+    <h4 class="product-title">{{product.name}}</h4>
+    <!-- Product Price -->
+    <div class="product-price">{{product.price.priceDisplay}}</div>
+    <!-- Product Strike Through Price & Discount -->
+    <div>
+        <span class="strike-through-price">{{product.price.strikeThroughPriceDisplay}}</span>
+        <span *ngIf="product.price.discount !== 0" class="discount">{{product.price.discount}}%</span>
+    </div>
+    <!-- Product Merchant Name -->
+    <div class="merchant-name">{{product?.merchantName}}</div>
+    <!-- Product Review Rating -->
+    <div *ngIf="product?.review?.rating" class="rating-container">
+        <mat-icon class="rating-icon">star</mat-icon>
+        <span class="rating">{{product.review.rating}}</span>
+        <span class="count">({{product?.review?.count}})</span>
+    </div>
+    <!-- Check Details -->
+    <button mat-button color="primary" (click)="onCheckDetails()">Check Details</button>
+</div>

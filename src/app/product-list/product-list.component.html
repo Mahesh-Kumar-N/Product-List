@@ -1,0 +1,23 @@
+<div id="product-list-container">
+    <!-- Search container -->
+    <div class="search-container">
+        <input type="text" id="search" class="search-input" [ngModel]="searchText" placeholder="Search"
+            (ngModelChange)="onSearch($event)">
+        <mat-icon id="clear" class="clear-icon" (click)="onClearSearch()">close</mat-icon>
+    </div>
+    <!-- Product List -->
+    <div class="product-list-container">
+        <ng-container *ngFor="let product of productArray">
+            <app-product-card
+                [product]="product">
+            </app-product-card>
+        </ng-container>
+    </div>
+    <!-- Paginator -->
+    <mat-paginator 
+        [length]="totalAvailableProductCount"
+        [pageSize]="24"
+        (page)="changePage($event)"
+        aria-label="Select page">
+    </mat-paginator>
+</div>

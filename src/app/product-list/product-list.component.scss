@@ -1,0 +1,27 @@
+.product-list-container {
+    display: flex;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.search-input {
+    width: 30%;
+    height: 30px;
+    padding-right: 30px;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 34%;
+    top: 24%;
+    font-size: 20px;
+    cursor: pointer;
+}
